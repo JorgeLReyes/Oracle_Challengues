@@ -1,0 +1,183 @@
+:root {
+  --bg: #f3f5fc;
+  --color-blue: #0a3871;
+  --color-gray: #495057;
+  --color-gray-light: #d8dfe8;
+  --color-black: #141414;
+}
+
+html,
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  background-color: var(--bg);
+  min-height: 100dvh;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 90%;
+  flex-grow: 1;
+
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.container-area {
+  width: 100%;
+  height: 100vh;
+  padding-top: 1rem;
+}
+
+.container-area > * {
+  width: 100%;
+}
+.container-area:has(.container-text) {
+  flex-direction: column;
+}
+
+.container-text {
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.container-text > * {
+  width: 100%;
+}
+
+.container-text > textarea {
+  flex-grow: 1;
+}
+
+.container-footer {
+  justify-content: start;
+  font-size: 0.7rem;
+  gap: 0.2rem;
+  padding-left: 1rem;
+  color: var(--color-gray);
+}
+
+.container-buttons {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  gap: 2rem;
+}
+
+.container-buttons button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem 0;
+  width: 100%;
+  flex-grow: 1;
+  border-radius: 1rem;
+}
+
+.container-buttons button:first-child {
+  background-color: var(--color-blue);
+  color: var(--bg);
+}
+
+.container-buttons button:last-child {
+  background-color: var(--color-gray-light);
+  color: var(--color-blue);
+  border: thin solid var(--color-blue);
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  border: none;
+  font-family: inherit;
+  padding: 3rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: transparent;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: var(--color-blue);
+}
+
+.container-area:last-child {
+  padding: 2rem 0;
+}
+
+.container-msj {
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.container-msj > * {
+  width: 70%;
+}
+
+.container-alert {
+  text-align: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.container-alert p:first-child {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.container-alert p:last-child {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.logo {
+  position: fixed;
+  top: 2.5rem;
+  left: 2.5rem;
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    padding-left: 20vh;
+    gap: 6rem;
+  }
+
+  .container-area {
+    width: auto;
+  }
+
+  .container-area:first-child {
+    flex-grow: 2;
+  }
+
+  .logo {
+    display: block;
+  }
+}
