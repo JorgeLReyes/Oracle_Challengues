@@ -17,21 +17,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="flex">
-    <section class="logo">
+    <section class="flex logo">
       <img src="img/Logo.png" alt="" />
     </section>
     <section class="flex container">
       <section class="flex container-area">
         <section class="flex container-text">
-          <textarea id="" placeholder="Ingrese el texto aqui"></textarea>
+          <textarea id="texto" placeholder="Ingrese el texto aqui"></textarea>
           <div class="flex container-footer">
             <i class="bx bxs-bell"></i>
             <span>Solo letras minúsculas y sin acentos</span>
           </div>
         </section>
         <section class="flex container-buttons">
-          <button>Encriptar</button>
-          <button>Desencriptar</button>
+          <button id="encriptar">Encriptar</button>
+          <button id="desencriptar">Desencriptar</button>
         </section>
       </section>
       <section class="flex container-area">
@@ -46,5 +46,7 @@
         </div>
       </section>
     </section>
+
+    <script src="app.js"></script>
   </body>
 </html>
