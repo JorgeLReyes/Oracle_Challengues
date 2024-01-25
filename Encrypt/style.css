@@ -43,8 +43,15 @@ body {
 
 .container-area {
   width: 100%;
-  height: 100vh;
   padding-top: 1rem;
+}
+
+.container-area:first-child {
+  height: calc(100dvh - 64px);
+}
+
+.container-area:last-child {
+  height: auto;
 }
 
 .container-area > * {
@@ -80,16 +87,19 @@ body {
   padding-top: 2rem;
   padding-bottom: 2rem;
   gap: 2rem;
+  flex-direction: column;
 }
 
-.container-buttons button {
+button {
   border: none;
   outline: none;
   cursor: pointer;
   padding: 1rem 0;
   width: 100%;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   border-radius: 1rem;
+  background-color: #fff;
+  border: thin solid var(--color-blue);
 }
 
 .container-buttons button:first-child {
@@ -100,7 +110,6 @@ body {
 .container-buttons button:last-child {
   background-color: var(--color-gray-light);
   color: var(--color-blue);
-  border: thin solid var(--color-blue);
 }
 
 textarea {
@@ -128,6 +137,9 @@ textarea::placeholder {
   background-color: #fff;
   height: 100%;
   border-radius: 1rem;
+  padding: 2rem 0;
+  word-wrap: break-word;
+  gap: 1rem;
 }
 
 .container-msj > * {
@@ -150,19 +162,30 @@ textarea::placeholder {
   color: var(--color-gray);
 }
 
+.container-img {
+  display: none;
+}
+
 img {
   width: 100%;
   object-fit: cover;
 }
 
 .logo {
-  position: fixed;
-  top: 2.5rem;
-  left: 2.5rem;
-  display: none;
+  width: 100%;
+  justify-content: start;
+  padding: 1rem;
 }
 
-@media screen and (min-width: 600px) {
+.logo img {
+  width: 5rem;
+}
+
+.flex-bt {
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 700px) {
   .container {
     flex-direction: row;
     padding-left: 20vh;
@@ -170,14 +193,36 @@ img {
   }
 
   .container-area {
+    width: 100%;
+  }
+
+  .container-area {
     width: auto;
+    height: 100dvh;
   }
 
   .container-area:first-child {
     flex-grow: 2;
   }
 
-  .logo {
+  .container-area:last-child {
+    height: 100dvh;
+    width: 25vw;
+  }
+
+  .container-img {
     display: block;
+  }
+
+  .container-buttons {
+    flex-direction: row;
+  }
+
+  .logo {
+    position: absolute;
+    width: auto;
+    top: 2.5rem;
+    left: 2.5rem;
+    padding: 0;
   }
 }
